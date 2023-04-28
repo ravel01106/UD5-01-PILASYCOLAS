@@ -22,4 +22,16 @@ public class Costumer {
         return stackProducts;
     }
 
+    public void pushStack() {
+        String msg = "El cliente aun no ha cogido ningún producto";
+        if (numberProducts != 0) {
+            for (int i = 0; i < numberProducts; i++) {
+                stackProducts.push(Utils.getRandomProduct());
+            }
+        } else {
+            System.out.println(msg);
+
+        }
+    }
+
 }
