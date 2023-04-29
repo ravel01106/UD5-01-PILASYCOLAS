@@ -47,10 +47,19 @@ public class Cashier {
     }
 
     public void addCustomer(Customer newCustomer) {
-        String msg = "The cash register is closed.";
+        String msg = "-> The cash register is closed.";
         if (isOpenCashRegister) {
             this.customerQueue.add(newCustomer);
-            msg = "The costumer " + newCustomer.getName() + " has joined the queue.";
+            msg = "-> The costumer " + newCustomer.getName() + " has joined the queue.";
+        }
+        System.out.println(msg);
+    }
+
+    public void customerService() {
+        String msg = "-> There are no customers in the queue.";
+        if (this.customerQueue.size() != 0) {
+            msg = "-> " + this.customerQueue.peek() + " has been attended to.";
+            this.customerQueue.poll();
         }
         System.out.println(msg);
     }
