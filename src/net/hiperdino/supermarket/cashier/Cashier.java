@@ -58,10 +58,21 @@ public class Cashier {
     public void customerService() {
         String msg = "-> There are no customers in the queue.";
         if (this.customerQueue.size() != 0) {
-            msg = "-> " + this.customerQueue.peek() + " has been attended to.";
+            msg = "-> " + this.customerQueue.peek().getName() + " has been attended to.";
             this.customerQueue.poll();
         }
         System.out.println(msg);
+    }
+
+    public String showCustomerInQueue() {
+        String msg = "-> There are no customers in the queue.";
+        if (this.customerQueue.size() != 0) {
+            msg = "-> Customer in the queue:\n";
+            for (Customer customer : this.customerQueue) {
+                msg += "-> " + customer.getName() + ".\n";
+            }
+        }
+        return msg;
     }
 
     @Override
@@ -69,14 +80,11 @@ public class Cashier {
         String msg = "CASHIER ATTIBUTES:\n";
         msg += "-> Cash register number: " + this.numCashRegister + ".\n";
         msg += "-> Total customer: " + this.customerQueue.size() + ".\n";
-        msg += "-> Customer in the queue:\n";
         // Iterator<Customer> iteratorCustomer = this.customerQueue.iterator();
         // while (iteratorCustomer.hasNext()) {
         // msg += "-> " + iteratorCustomer.next().getName() + ".\n";
         // }
-        for (Customer customer : this.customerQueue) {
-            msg += "-> " + customer.getName() + ".\n";
-        }
+        msg += showCustomerInQueue();
         return msg;
     }
 
