@@ -15,7 +15,7 @@ public class App {
         personCashier.openCashRegister();
         // personCashier.closeCashRegister();
         personCashier.addCustomer(personOne);
-        personCashier.closeCashRegister();
         personCashier.addCustomer(personTwo);
+        System.out.println(personCashier.toString());
     }
 }

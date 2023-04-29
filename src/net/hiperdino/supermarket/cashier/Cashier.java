@@ -2,6 +2,7 @@ package net.hiperdino.supermarket.cashier;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Iterator;
 
 import net.hiperdino.supermarket.costumer.Customer;
 
@@ -52,6 +53,22 @@ public class Cashier {
             msg = "The costumer " + newCustomer.getName() + " has joined the queue.";
         }
         System.out.println(msg);
+    }
+
+    @Override
+    public String toString() {
+        String msg = "CASHIER ATTIBUTES:\n";
+        msg += "-> Cash register number: " + this.numCashRegister + ".\n";
+        msg += "-> Total customer: " + this.customerQueue.size() + ".\n";
+        msg += "-> Customer in the queue:\n";
+        // Iterator<Customer> iteratorCustomer = this.customerQueue.iterator();
+        // while (iteratorCustomer.hasNext()) {
+        // msg += "-> " + iteratorCustomer.next().getName() + ".\n";
+        // }
+        for (Customer customer : this.customerQueue) {
+            msg += "-> " + customer.getName() + ".\n";
+        }
+        return msg;
     }
 
 }
