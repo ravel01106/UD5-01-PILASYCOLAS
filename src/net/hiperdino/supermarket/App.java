@@ -1,13 +1,13 @@
 package net.hiperdino.supermarket;
 
-import net.hiperdino.supermarket.costumer.Costumer;
+import net.hiperdino.supermarket.costumer.Customer;
 
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        Costumer personOne = new Costumer(3);
+        Customer personOne = new Customer(3);
         System.out.println(personOne.toString());
-        Costumer personTwo = new Costumer(0);
+        Customer personTwo = new Customer(0);
         System.out.println(personTwo.toString());
     }
 }

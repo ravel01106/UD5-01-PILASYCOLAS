@@ -4,12 +4,12 @@ import java.util.Stack;
 
 import net.hiperdino.supermarket.utils.Utils;
 
-public class Costumer {
+public class Customer {
     private String name;
     private int numberProducts;
     private Stack<String> stackProducts = new Stack<>();
 
-    public Costumer(int numberProducts) {
+    public Customer(int numberProducts) {
         this.numberProducts = numberProducts;
         this.name = Utils.getRandomName();
         pushProducts();
