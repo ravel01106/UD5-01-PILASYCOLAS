@@ -27,4 +27,22 @@ public class Cashier {
         return isOpenCashRegister;
     }
 
+    public void openCashRegister() {
+        String msg = "The cash resgister was already open.";
+        if (!isOpenCashRegister) {
+            msg = "The cash register is open, the customer can pass.";
+            isOpenCashRegister = true;
+        }
+        System.out.println(msg);
+    }
+
+    public void closeCashRegister() {
+        String msg = "The cash resgister was already closed.";
+        if (isOpenCashRegister) {
+            msg = "The cash register is closed, the customer can not pass.";
+            isOpenCashRegister = false;
+        }
+        System.out.println(msg);
+    }
+
 }

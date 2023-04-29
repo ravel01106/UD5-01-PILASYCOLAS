@@ -1,6 +1,7 @@
 package net.hiperdino.supermarket;
 
 import net.hiperdino.supermarket.costumer.Customer;
+import net.hiperdino.supermarket.cashier.Cashier;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -9,5 +10,10 @@ public class App {
         System.out.println(personOne.toString());
         Customer personTwo = new Customer(0);
         System.out.println(personTwo.toString());
+        Cashier personCashier = new Cashier(1234);
+        personCashier.openCashRegister();
+        personCashier.openCashRegister();
+        personCashier.closeCashRegister();
+        personCashier.closeCashRegister();
     }
 }
