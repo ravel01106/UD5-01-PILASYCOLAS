@@ -45,4 +45,13 @@ public class Cashier {
         System.out.println(msg);
     }
 
+    public void addCustomer(Customer newCustomer) {
+        String msg = "The cash register is closed.";
+        if (isOpenCashRegister) {
+            this.customerQueue.add(newCustomer);
+            msg = "The costumer " + newCustomer.getName() + " has joined the queue.";
+        }
+        System.out.println(msg);
+    }
+
 }

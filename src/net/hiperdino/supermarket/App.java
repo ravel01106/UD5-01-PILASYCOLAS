@@ -13,7 +13,9 @@ public class App {
         Cashier personCashier = new Cashier(1234);
         personCashier.openCashRegister();
         personCashier.openCashRegister();
+        // personCashier.closeCashRegister();
+        personCashier.addCustomer(personOne);
         personCashier.closeCashRegister();
-        personCashier.closeCashRegister();
+        personCashier.addCustomer(personTwo);
     }
 }
