@@ -1,4 +1,4 @@
-package net.hiperdino.supermarket.costumer;
+package net.hiperdino.supermarket.customer;
 
 import java.util.Stack;
 

@@ -3,7 +3,7 @@ package net.hiperdino.supermarket.cashier;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import net.hiperdino.supermarket.costumer.Customer;
+import net.hiperdino.supermarket.customer.Customer;
 
 public class Cashier {
     private int numCashRegister;

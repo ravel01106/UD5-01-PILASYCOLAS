@@ -1,8 +1,8 @@
 package net.hiperdino.supermarket;
 
-import net.hiperdino.supermarket.costumer.Customer;
 import java.util.Scanner;
 import net.hiperdino.supermarket.cashier.Cashier;
+import net.hiperdino.supermarket.customer.Customer;
 
 public class Supermarket {
     final static Scanner KEYBOARD = new Scanner(System.in);
