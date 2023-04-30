@@ -2,7 +2,6 @@ package net.hiperdino.supermarket.cashier;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Iterator;
 
 import net.hiperdino.supermarket.costumer.Customer;
 
