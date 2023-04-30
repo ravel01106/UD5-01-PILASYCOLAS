@@ -75,10 +75,6 @@ public class Cashier {
         String msg = "CASHIER ATTIBUTES:\n";
         msg += "-> Cash register number: " + this.numCashRegister + ".\n";
         msg += "-> Total customer: " + this.customerQueue.size() + ".\n";
-        // Iterator<Customer> iteratorCustomer = this.customerQueue.iterator();
-        // while (iteratorCustomer.hasNext()) {
-        // msg += "-> " + iteratorCustomer.next().getName() + ".\n";
-        // }
         msg += showCustomerInQueue();
         return msg;
     }
