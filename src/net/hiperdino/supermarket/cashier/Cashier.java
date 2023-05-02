@@ -66,23 +66,19 @@ public class Cashier {
         System.out.println(msg);
     }
 
-    public String showCustomerInQueue() {
-        String msg = "-> There are no customers in the queue.";
+    @Override
+    public String toString() {
+        String msg = "CASHIER DETAILS:\n";
+        msg += "-> Cash register number: " + this.numCashRegister + ".\n";
+        msg += "-> Total customer: " + this.customerQueue.size() + ".\n";
         if (this.customerQueue.size() != 0) {
-            msg = "-> Customers in the queue:\n";
+            msg += "-> Customers in the queue:\n";
             for (Customer customer : this.customerQueue) {
                 msg += "-> " + customer.getName() + ".\n";
             }
+        } else {
+            msg += "-> There are no customers in the queue.";
         }
-        return msg;
-    }
-
-    @Override
-    public String toString() {
-        String msg = "CASHIER ATTIBUTES:\n";
-        msg += "-> Cash register number: " + this.numCashRegister + ".\n";
-        msg += "-> Total customer: " + this.customerQueue.size() + ".\n";
-        msg += showCustomerInQueue();
         return msg;
     }
 

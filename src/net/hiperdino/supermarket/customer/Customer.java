@@ -31,7 +31,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        String msg = "CUSTOMER ATTRIBUTES:\n";
+        String msg = "CUSTOMER DETAILS:\n";
         msg += "-> Name: " + this.name + ".\n";
         msg += "-> Total products: " + this.numberProducts + ".\n";
         msg += "-> List of items in cart:\n";

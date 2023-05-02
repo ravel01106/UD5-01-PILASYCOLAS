@@ -20,6 +20,7 @@ public class Supermarket {
 
     public static void main(String[] args) throws Exception {
         String option = "1";
+        String msg = "";
         Cashier cashierOne = new Cashier();
         while (!option.equals("5")) {
             menu();
@@ -33,26 +34,38 @@ public class Supermarket {
                         cashierOne.addCustomer(new Customer());
 
                     } else {
-                        System.out.println("-> The cash register is closed.");
+                        msg = "-> The cash register is closed.";
                     }
                     break;
                 case "3":
-                    cashierOne.customerService();
+                    if (cashierOne.getIsOpenCashRegister()) {
+                        cashierOne.customerService();
+
+                    } else {
+                        msg = "-> The cash register is closed.";
+                    }
+
                     break;
                 case "4":
-                    System.out.println(cashierOne.showCustomerInQueue());
+                    if (cashierOne.getIsOpenCashRegister()) {
+                        System.out.println(cashierOne.toString());
+
+                    } else {
+                        msg = "-> The cash register is closed.";
+                    }
                     break;
                 case "5":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.closeCashRegister();
                     }
-                    System.out.println("Closing the supermarket...\nSee you next time!");
+                    msg = "Closing the supermarket...\nSee you next time!";
                     break;
 
                 default:
-                    System.out.println("Option incorrect, please try again: ");
+                    msg = "Option incorrect, please try again: ";
                     break;
             }
+            System.out.println(msg);
 
         }
     }
