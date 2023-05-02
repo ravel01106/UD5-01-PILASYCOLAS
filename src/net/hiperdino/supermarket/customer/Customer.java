@@ -9,8 +9,8 @@ public class Customer {
     private int numberProducts;
     private Stack<String> stackProducts = new Stack<>();
 
-    public Customer(int numberProducts) {
-        this.numberProducts = numberProducts;
+    public Customer() {
+        this.numberProducts = Utils.RandomNumProducts();
         this.name = Utils.getRandomName();
         pushProducts();
     }
@@ -24,13 +24,8 @@ public class Customer {
     }
 
     public void pushProducts() {
-        String msg = "The customer has not taken any product yet.";
-        if (numberProducts != 0) {
-            for (int i = 0; i < numberProducts; i++) {
-                stackProducts.push(Utils.getRandomProduct());
-            }
-        } else {
-            System.out.println(msg);
+        for (int i = 0; i < numberProducts; i++) {
+            stackProducts.push(Utils.getRandomProduct());
         }
     }
 

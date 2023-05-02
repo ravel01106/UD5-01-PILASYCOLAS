@@ -54,6 +54,7 @@ public class Cashier {
     public void addCustomer(Customer newCustomer) {
         this.customerQueue.add(newCustomer);
         System.out.println("-> The costumer " + newCustomer.getName() + " has joined the queue.");
+        System.out.println(newCustomer.toString());
     }
 
     public void customerService() {

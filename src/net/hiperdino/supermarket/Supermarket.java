@@ -7,21 +7,6 @@ import net.hiperdino.supermarket.customer.Customer;
 public class Supermarket {
     final static Scanner KEYBOARD = new Scanner(System.in);
 
-    public static int numberProductsCustomer() {
-        int numberProducts = 0;
-        String msg = "Please introduce the number of products in the customer's cart:";
-        System.out.println(msg);
-        while (true) {
-            try {
-                numberProducts = Integer.parseInt(KEYBOARD.nextLine());
-                return numberProducts;
-            } catch (NumberFormatException e) {
-                msg = "Number incorrect, please try again: ";
-                System.out.println(msg);
-            }
-        }
-    }
-
     public static void menu() {
         String msg = "\nWelcome to our supermarket!\n";
         msg += "What would you like to do?\n";
@@ -45,7 +30,8 @@ public class Supermarket {
                     break;
                 case "2":
                     if (cashierOne.getIsOpenCashRegister()) {
-                        cashierOne.addCustomer(new Customer(numberProductsCustomer()));
+                        cashierOne.addCustomer(new Customer());
+
                     } else {
                         System.out.println("-> The cash register is closed.");
                     }

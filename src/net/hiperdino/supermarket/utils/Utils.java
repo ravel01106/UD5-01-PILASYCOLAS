@@ -3,6 +3,8 @@ package net.hiperdino.supermarket.utils;
 import java.util.Random;
 
 public class Utils {
+    static final int MINIMUM_DEFAULT = 1;
+    static final int MAXIMUM_DEFAULT = 10;
     static final private String[] PRODUCTS = new String[] {
             "Biscuit",
             "Ham",
@@ -58,6 +60,12 @@ public class Utils {
         Random numRandom = new Random();
         int numIndex = numRandom.nextInt(NAME_COSTUMER.length);
         return NAME_COSTUMER[numIndex];
+    }
+
+    public static int RandomNumProducts() {
+        Random numRandom = new Random();
+        int numberProducts = (numRandom.nextInt((MAXIMUM_DEFAULT + MINIMUM_DEFAULT) - 1) + MINIMUM_DEFAULT);
+        return numberProducts;
     }
 
 }
