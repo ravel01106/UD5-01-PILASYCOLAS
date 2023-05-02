@@ -7,25 +7,9 @@ import net.hiperdino.supermarket.customer.Customer;
 public class Supermarket {
     final static Scanner KEYBOARD = new Scanner(System.in);
 
-    public static int numberCashRegister() {
-        int numberCashRegister = 0;
-        String msg = "Welcome to our supermarket!\n";
-        msg += "Please, introduce your cash Register's number: ";
-        System.out.println(msg);
-        while (true) {
-            try {
-                numberCashRegister = Integer.parseInt(KEYBOARD.nextLine());
-                return numberCashRegister;
-            } catch (NumberFormatException e) {
-                msg = "Number incorrect, please try again: ";
-                System.out.println(msg);
-            }
-        }
-    }
-
     public static int numberProductsCustomer() {
         int numberProducts = 0;
-        String msg = "Please introduce the number of products in the customer's cart: ";
+        String msg = "Please introduce the number of products in the customer's cart:";
         System.out.println(msg);
         while (true) {
             try {
@@ -51,7 +35,7 @@ public class Supermarket {
 
     public static void main(String[] args) throws Exception {
         String option = "1";
-        Cashier cashierOne = new Cashier(numberCashRegister());
+        Cashier cashierOne = new Cashier();
         while (!option.equals("5")) {
             menu();
             option = KEYBOARD.nextLine();

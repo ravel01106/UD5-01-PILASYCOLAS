@@ -6,12 +6,14 @@ import java.util.Queue;
 import net.hiperdino.supermarket.customer.Customer;
 
 public class Cashier {
+    private static int count = 1001;
     private int numCashRegister;
     private Queue<Customer> customerQueue = new LinkedList<>();
     private boolean isOpenCashRegister;
 
-    public Cashier(int numCashRegister) {
-        this.numCashRegister = numCashRegister;
+    public Cashier() {
+        this.numCashRegister = count;
+        incrementCount();
         this.isOpenCashRegister = false;
     }
 
@@ -25,6 +27,10 @@ public class Cashier {
 
     public boolean getIsOpenCashRegister() {
         return isOpenCashRegister;
+    }
+
+    public static void incrementCount() {
+        count++;
     }
 
     public void openCashRegister() {
