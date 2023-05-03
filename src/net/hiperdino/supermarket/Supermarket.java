@@ -20,29 +20,34 @@ public class Supermarket {
 
     public static void main(String[] args) throws Exception {
         String option = "1";
-        String msg = "";
+        String msg = "-> The cash register is closed.";
         Cashier cashierOne = new Cashier();
         while (!option.equals("5")) {
+
             menu();
             option = KEYBOARD.nextLine();
+
             switch (option) {
+
                 case "1":
                     cashierOne.openCashRegister();
                     break;
+
                 case "2":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.addCustomer(new Customer());
 
                     } else {
-                        msg = "-> The cash register is closed.";
+                        System.out.println(msg);
                     }
                     break;
+
                 case "3":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.customerService();
 
                     } else {
-                        msg = "-> The cash register is closed.";
+                        System.out.println(msg);
                     }
 
                     break;
@@ -51,21 +56,21 @@ public class Supermarket {
                         System.out.println(cashierOne.toString());
 
                     } else {
-                        msg = "-> The cash register is closed.";
+                        System.out.println(msg);
                     }
                     break;
+
                 case "5":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.closeCashRegister();
                     }
-                    msg = "Closing the supermarket...\nSee you next time!";
+                    System.out.println("Closing the supermarket...\nSee you next time!");
                     break;
 
                 default:
-                    msg = "Option incorrect, please try again: ";
+                    System.out.println("Option incorrect, please try again: ");
                     break;
             }
-            System.out.println(msg);
 
         }
     }
