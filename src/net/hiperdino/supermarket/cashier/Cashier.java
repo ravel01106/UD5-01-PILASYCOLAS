@@ -36,7 +36,7 @@ public class Cashier {
     public void openCashRegister() {
         String msg = "The cash resgister was already open.";
         if (!isOpenCashRegister) {
-            msg = "The cash register is open, the customer can pass.";
+            msg = "The cash register " + numCashRegister + " is opened, the customer can pass.";
             isOpenCashRegister = true;
         }
         System.out.println(msg);

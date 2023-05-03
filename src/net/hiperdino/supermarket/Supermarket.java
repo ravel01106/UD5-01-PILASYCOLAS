@@ -6,6 +6,9 @@ import net.hiperdino.supermarket.customer.Customer;
 
 public class Supermarket {
     final static Scanner KEYBOARD = new Scanner(System.in);
+    static Cashier cashierOne = new Cashier();
+    static Cashier cashierTwo = new Cashier();
+    static Cashier cashierThree = new Cashier();
 
     public static void menu() {
         String msg = "\nWelcome to our supermarket!\n";
@@ -18,17 +21,59 @@ public class Supermarket {
         System.out.println(msg);
     }
 
+    public static void openCashierBox() {
+        Cashier[] numberCashierRegisterArray = { cashierOne, cashierTwo, cashierThree };
+        String msg = "Which cash register do you want to open?:";
+        boolean isNumberCorrect = false;
+
+        msg += "Cash register One: " + cashierOne.getNumCashRegister() + ".\n";
+        msg += "Cash register Two: " + cashierTwo.getNumCashRegister() + ".\n";
+        msg += "Cash register Three: " + cashierThree.getNumCashRegister() + ".\n";
+        msg += "Write the number cash register to open it:";
+        System.out.println(msg);
+
+        msg = "Number incorrect, try again:";
+
+        while (!isNumberCorrect) {
+
+            try {
+                int numberCashierRegister = Integer.parseInt(KEYBOARD.nextLine());
+
+                for (int i = 0; i < numberCashierRegisterArray.length; i++) {
+
+                    if (numberCashierRegister == numberCashierRegisterArray[i].getNumCashRegister()) {
+                        numberCashierRegisterArray[i].openCashRegister();
+                        isNumberCorrect = true;
+                    }
+                }
+
+                if (!isNumberCorrect) {
+                    System.out.println(msg);
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println(msg);
+
+            }
+
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         String option = "1";
         String msg = "";
-        Cashier cashierOne = new Cashier();
+
         while (!option.equals("5")) {
+
             menu();
             option = KEYBOARD.nextLine();
+
             switch (option) {
+
                 case "1":
-                    cashierOne.openCashRegister();
+                    openCashierBox();
                     break;
+
                 case "2":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.addCustomer(new Customer());
@@ -37,6 +82,7 @@ public class Supermarket {
                         msg = "-> The cash register is closed.";
                     }
                     break;
+
                 case "3":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.customerService();
@@ -46,6 +92,7 @@ public class Supermarket {
                     }
 
                     break;
+
                 case "4":
                     if (cashierOne.getIsOpenCashRegister()) {
                         System.out.println(cashierOne.toString());
@@ -54,6 +101,7 @@ public class Supermarket {
                         msg = "-> The cash register is closed.";
                     }
                     break;
+
                 case "5":
                     if (cashierOne.getIsOpenCashRegister()) {
                         cashierOne.closeCashRegister();
@@ -64,7 +112,9 @@ public class Supermarket {
                 default:
                     msg = "Option incorrect, please try again: ";
                     break;
+
             }
+
             System.out.println(msg);
 
         }
