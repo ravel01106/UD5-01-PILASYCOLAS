@@ -71,7 +71,7 @@ public class Supermarket {
                     System.out.println("Option incorrect, please try again: ");
                     break;
             }
-
         }
+        KEYBOARD.close();
     }
 }
